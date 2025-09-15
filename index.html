@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- disable user scaling -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Resume : Qi Huang</title>
+    <link rel="stylesheet" href="assets/css/typo.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script>
+        function loading() {
+            document.getElementsByClassName('avatar')[0].style.display = 'block';
+            document.getElementsByClassName('loading')[0].style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+    <article class="container">
+        <section class="side" id="side">
+
+            <!-- toggle switch on the left : Start-->
+            <label class="switch" style="display: none;" onchange="switchFixed()">
+                <script type="text/javaScript">
+                    function switchFixed(){
+                        // pin/unpin the sidebar 
+                        var value = document.getElementById('side').style.position === 'fixed' ? 'absolute' : 'fixed';
+                        document.getElementById('side').style.position = value;
+                    }
+                </script>
+                <input id="cb" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <style>
+                @media (min-width: 750px) {
+                    .switch {
+                        position: relative;
+                        display: inline-block !important;
+                        width: 60px;
+                        height: 34px;
+                    }
+
+                    .switch input {
+                        display: none;
+                    }
+
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #ccc;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+
+                    .slider:before {
+                        position: absolute;
+                        content: "";
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: white;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+
+                    input:checked+.slider {
+                        background-color: #0e5ad3;
+                    }
+
+                    input:focus+.slider {
+                        box-shadow: 0 0 1px #0e5ad3;
+                    }
+
+                    input:checked+.slider:before {
+                        -webkit-transform: translateX(26px);
+                        -ms-transform: translateX(26px);
+                        transform: translateX(26px);
+                    }
+
+                    .slider.round {
+                        border-radius: 34px;
+                    }
+
+                    .slider.round:before {
+                        border-radius: 50%;
+                    }
+                }
+            </style>
+            <!--  toggle switch on the left : End-->
+
+            <!-- profile section -->
+            <section class="me">
+                <section class="portrait">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- profile photo -->
+                    <img class="avatar" src="assets/images/avatar.png" onload="loading()">
+                </section>
+
+                <h1 class="name">Qi Huang</h1>
+                <h4 class="info-job">New Graduate / Halifax</h4>
+
+            </section>
+
+            <!-- Basic information -->
+            <!-- <section class="profile info-unit">
+                <h2>
+                    <i class="fa fa-user" aria-hidden="true"></i>About me</h2>
+                <hr/>
+                <ul>
+                    <li>
+                        <label>个人信息</label>
+                        <span>*******</span>
+                    </li>
+                    <li>
+                        <label>*******</label>
+                        <span>*******</span>
+                    </li>
+                    <li>
+                        <label>*******</label>
+                        <span>*******</span>
+                    </li>
+                </ul>
+            </section> -->
+
+            <!-- Contact Information -->
+            <section class="contact info-unit">
+                <h2>
+                    </i>Contact Information
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <label>Email</label>
+                        <a href="mailto:xxxexample@example.com" target="_blank">qi@example.ca</a>
+                    </li>
+                    <li>
+                        <label>LinkedIn</label>
+                        <a href="https://www.linkedin.com/in/qihuang00/" target="_blank">qihuang00</a>
+                    </li>
+                    <li>
+                        <label>Github</label>
+                        <a href="https://github.com" target="_blank">github.com</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Skills -->
+            <section class="skill info-unit">
+                <h2>
+                    Technical Skills
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <label>AWS</label>
+                        <progress value="80" max="100"></progress>
+                        <!-- <span>90%</span> -->
+                    </li>
+                    <li>
+                        <label>Java</label>
+                        <progress value="85" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>Frontend</label>
+                        <progress value="70" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>React</label>
+                        <progress value="80" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>Python</label>
+                        <progress value="80" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>Bash</label>
+                        <progress value="80" max="100"></progress>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Tech -->
+            <div class="stack info-unit">
+                <h2>Tech Stack</h2>
+                <hr />
+                <ul>
+                    <li>
+                        <label>Frontend</label>
+                        <span>React、jQuery、Bootstrap、SASS、LESS</span>
+                    </li>
+                    <li>
+                        <label>Backend</label>
+                        <span>Node.js、MySQL、MongoDB、WordPress、ThinkPHP</span>
+                    </li>
+                    <li>
+                        <label>Others</label>
+                        <span>Git、SVN、Markdown</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Visitors -->
+            <section class="visitor info-unit">
+                <h2>👀 Page Views</h2>
+                <hr />
+                <div class="visitor-value">
+                    <span id="visitor-count">--</span>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+        </section>
+
+        <section class="main">
+
+            <!-- Education -->
+            <section class="edu info-unit">
+                <h2>
+                    </i>Education
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <h3>
+                            <span>Dalhousie University</span>
+                            <time>May 2025 (Graduated)</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>Bachelor of Computer Science</li>
+                            <li>GPA: 3.98</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>Relevant Coursework</span>
+                        </h3>
+                        <p>
+                            Network Security,
+                            Data Structures and Algorithms,
+                            Database Systems,
+                            Software Engineering,
+                            Cybersecurity,
+                            Introduction to Cloud Computing,
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- PROFESSIONAL EXPERIENCE -->
+            <section class="work info-unit">
+                <h2>
+                    </i>Professional Experience
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <h3>
+                            <span>Canada Revenue Agency - IT Analyst</span>
+                            <time>09.2023 – 04.2024</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>Provided in-person and remote technical support by diagnosing and resolving hardware,
+                                software,
+                                and connectivity issues, ensuring minimal downtime for employees.</li>
+                            <li>Managed IT service and access-related requests (password resets, group membership
+                                changes,
+                                account lockouts), ensuring timely resolution and compliance with security workflows.
+                            </li>
+                            <li>Provisioned and deprovisioned user accounts, configured application permissions, and
+                                enforced
+                                secure access procedures during onboarding/offboarding; coordinated with HR and IT to
+                                maintain
+                                role-based access control (RBAC) and compliance.</li>
+                            <li>Delivered real-time, at-desk assistance to users adopting new systems and tools,
+                                ensuring smooth
+                                transitions and minimal disruption to workflows.</li>
+                            <li>Deployed and configured laptops, desktops, peripherals, and enterprise applications,
+                                ensuring proper
+                                installation, system compatibility, and user readiness.</li>
+                            <li>Maintained IT asset and user access records, ensuring accurate tracking of deployments,
+                                permissions,
+                                and replacements to support audit readiness and control reviews.</li>
+                            <li>Created clear documentation and step-by-step troubleshooting guides to improve workflow
+                                efficiency and support knowledge sharing.</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+
+            <!-- Personal Project -->
+            <section class="project info-unit">
+                <h2>
+                    </i>Personal Project
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <h3>
+                            <span>Cloud Resume</span>
+                            <span class="link">
+                                <a href="#" target="_blank">Demo</a>
+                            </span>
+                        </h3>
+                        <ul class="info-content">
+                            <li><strong>Tech Stack:</strong> AWS (S3, CloudFront, Route 53, DynamoDB, Lambda, API
+                                Gateway, IAM), Terraform, GitHub Actions</li>
+                            <li><strong>Goal:</strong> Build and deploy a personal résumé website fully hosted on AWS,
+                                integrated with a live visitor counter backend</li>
+                            <li><strong>Implementation:</strong>
+                                <ul>
+                                    <li>Deployed static site with S3, CloudFront, and Route 53 for global availability
+                                        and DNS routing</li>
+                                    <li>Designed a serverless backend using API Gateway, Lambda, and DynamoDB to store
+                                        visitor data</li>
+                                    <li>Automated deployments with GitHub Actions (CI/CD), ensuring zero-downtime
+                                        updates</li>
+                                    <li>Implemented Terraform IaC for reproducible and version-controlled infrastructure
+                                    </li>
+                                    <li>Secured resources with IAM policies and HTTPS via CloudFront</li>
+                                </ul>
+                            </li>
+                            <li><strong>Result:</strong> Delivered a fully functional, secure, and automated
+                                cloud-native application demonstrating end-to-end cloud and DevOps skills</li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
+
+
+                </ul>
+            </section>
+
+        </section>
+    </article>
+
+
+
+    <footer class="footer">
+        <footer class="footer">
+            <p>© 2025 Qi Huang. Last updated on <time>August 15, 2025</time>.</p>
+        </footer>
+
+        <!-- side bar -->
+        <aside>
+            <ul>
+                <li>
+                    <a href="**" target="_blank">Github</a>
+                </li>
+                <!-- <li>
+                    <a href="http://qingni520.com/" target="_blank">Blog</a>
+                </li> -->
+            </ul>
+        </aside>
+
+        <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

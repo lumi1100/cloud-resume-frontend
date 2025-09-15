@@ -1,0 +1,331 @@
+@charset "utf-8";
+
+/* Prevent user-defined background color from affecting the page, allow users to customize fonts */
+html {
+  color: #333;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+}
+
+/* If the project only supports IE9+ | Chrome | Firefox etc., 
+   it is recommended to add .borderbox class to <html> */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Reset margins and paddings to eliminate cross-browser differences */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, 
+input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, 
+figure, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset HTML5 tags; IE requires createElement(TAG) in JS */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+/* Make HTML5 media elements behave like img */
+audio, canvas, video {
+  display: inline-block;
+}
+
+/* Note: form elements do not inherit parent font */
+body, button, input, select, textarea {
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, 
+        Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* Remove default spacing in table cells and merge borders */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default borders */
+fieldset, img {
+  border: 0;
+}
+
+/* Blockquote style */
+blockquote {
+  position: relative;
+  color: #999;
+  font-weight: 400;
+  border-left: 1px solid #1abc9c;
+  padding-left: 1em;
+  margin: 1em 3em 1em 2em;
+}
+
+@media only screen and ( max-width: 640px ) {
+  blockquote {
+    margin: 1em 0;
+  }
+}
+
+/* In browsers other than Firefox, elements don’t have underline by default */
+acronym, abbr {
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+
+/* Add help cursor for <abbr> to indicate explanation */
+abbr {
+  cursor: help;
+}
+
+/* Consistent <del> style */
+del {
+  text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Remove default list markers; many sites use lists for layout/content */
+ul, ol {
+  list-style: none;
+}
+
+/* Alignments are critical for typography; don’t center everything */
+caption, th {
+  text-align: left;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+/* Normalize superscript and subscript */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+:root sub, :root sup {
+  vertical-align: baseline; /* for IE9 and modern browsers */
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Underline links on hover */
+a {
+  color: #1abc9c;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.typo a {
+  border-bottom: 1px solid #1abc9c;
+}
+
+.typo a:hover {
+  border-bottom-color: #555;
+  color: #555;
+  text-decoration: none;
+}
+
+/* Default: no underline to keep layout clean */
+ins, a {
+  text-decoration: none;
+}
+
+/* Special name mark: <u> has returned in HTML5 Draft, 
+   but for better compatibility, use class="typo-u" */
+u, .typo-u {
+  text-decoration: underline;
+}
+
+/* Highlight text, similar to a marker pen */
+mark {
+  background: #fffdd1;
+  border-bottom: 1px solid #ffedce;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+/* Code snippet style */
+pre, code, pre tt {
+  font-family: Courier, 'Courier New', monospace;
+}
+
+pre {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 1em 1.5em;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Consistent horizontal rule */
+hr {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 0.8em;
+  height: 10px;
+}
+
+/* Small text: footer, captions, notes */
+small, .typo-small,
+figcaption {
+  font-size: 0.9em;
+  color: #888;
+}
+
+strong, b {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Add drag cursor for draggable elements */
+[draggable] {
+  cursor: move;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/* Force line break for long text */
+.textwrap, .textwrap td, .textwrap th {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.textwrap-table {
+  table-layout: fixed;
+}
+
+/* Provide serif font style (note: iOS Chinese will fallback to sans-serif) */
+.serif {
+  font-family: Palatino, Optima, Georgia, serif;
+}
+
+/* Ensure vertical spacing between blocks/paragraphs */
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
+.typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table, blockquote {
+  margin-bottom: 1.2em
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, 
+               Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  font-weight: 100;
+  color: #000;
+  line-height: 1.35;
+}
+
+/* Headings should be closer to their content and separated from other blocks */
+.typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
+.typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+}
+
+.typo h1, .typo-h1 { font-size: 2em; }
+.typo h2, .typo-h2 { font-size: 1.8em; }
+.typo h3, .typo-h3 { font-size: 1.6em; }
+.typo h4, .typo-h4 { font-size: 1.4em; }
+.typo h5, .typo h6, .typo-h5, .typo-h6 { font-size: 1.2em; }
+
+/* Restore default ul/ol styles inside articles */
+.typo ul, .typo-ul {
+  margin-left: 1.3em;
+  list-style: disc;
+}
+
+.typo ol, .typo-ol {
+  list-style: decimal;
+  margin-left: 1.9em;
+}
+
+.typo li ul, .typo li ol, .typo-ul ul, .typo-ul ol, .typo-ol ul, .typo-ol ol {
+  margin-bottom: 0.8em;
+  margin-left: 2em;
+}
+
+.typo li ul, .typo-ul ul, .typo-ol ul {
+  list-style: circle;
+}
+
+/* Table base style inside articles */
+.typo table th, .typo table td, .typo-table th, .typo-table td, .typo table caption {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  color: #666;
+}
+
+.typo table th, .typo-table th {
+  background: #fbfbfb;
+}
+
+.typo table thead th, .typo-table thead th {
+  background: #f1f1f1;
+}
+
+.typo table caption {
+  border-bottom: none;
+}
+
+/* Remove default styles for input/textarea in WebKit */
+.typo-input, .typo-textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.typo-em, .typo em, legend, caption {
+  color: #000;
+  font-weight: inherit;
+}
+
+/* Emphasis dots: use only for short text (less than 100 full-width characters) */
+.typo-em {
+  position: relative;
+}
+
+.typo-em:after {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  content: "・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・";
+}
+
+/* Responsive images */
+.typo img {
+  max-width: 100%;
+}
